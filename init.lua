@@ -20,8 +20,8 @@ local dyes = {
 	{"turquoise",  "Turquoise",	false, "#4f8", default.LIGHT_MAX},
 }
 
-local stairsplus_mod = minetest.get_modpath("moreblocks")
-        and minetest.global_exists("stairsplus")
+local stairsplus_mod = core.get_modpath("moreblocks")
+        and core.global_exists("stairsplus")
 
 for i = 1, #dyes do
 	local name, desc, craft, color, l_value = unpack(dyes[i])
@@ -36,17 +36,17 @@ for i = 1, #dyes do
 		sounds = default.node_sound_glass_defaults(),
 		light_source = l_value}
 
-	minetest.register_node("colored_meselamps:" .. name .. "_meselamp", def )
+	core.register_node("colored_meselamps:" .. name .. "_meselamp", def )
 
 	if (craft == true) then
 
-		minetest.register_craft{
+		core.register_craft{
 			type = "shapeless",
 			output = "colored_meselamps:" .. name .. "_meselamp",
 			recipe = {"group:dye,color_" .. name, "default:meselamp"},
 		}
 
-		minetest.register_craft{
+		core.register_craft{
 			type = "shapeless",
 			output = "colored_meselamps:" .. name .. "_meselamp",
 			recipe = {"group:dye,color_" .. name, "group:colored_meselamps"},
@@ -64,42 +64,42 @@ for i = 1, #dyes do
 	end
 end
 
-minetest.register_craft{
+core.register_craft{
 	type = "shapeless",
 	output = "colored_meselamps:dark_blue_meselamp",
 	recipe = {"group:dye,color_black", "group:dye,color_blue", "default:meselamp"},
 }
-minetest.register_craft{
+core.register_craft{
 	type = "shapeless",
 	output = "colored_meselamps:dark_red_meselamp",
 	recipe = {"group:dye,color_black", "group:dye,color_red", "default:meselamp"},
 }
-minetest.register_craft{
+core.register_craft{
 	type = "shapeless",
 	output = "colored_meselamps:lime_meselamp",
 	recipe = {"group:dye,color_yellow", "group:dye,color_green", "default:meselamp"},
 }
-minetest.register_craft{
+core.register_craft{
 	type = "shapeless",
 	output = "colored_meselamps:turquoise_meselamp",
 	recipe = {"group:dye,color_green", "group:dye,color_cyan", "default:meselamp"},
 }
-minetest.register_craft{
+core.register_craft{
 	type = "shapeless",
 	output = "colored_meselamps:dark_blue_meselamp",
 	recipe = {"group:dye,color_black", "group:dye,color_blue", "group:colored_meselamps"},
 }
-minetest.register_craft{
+core.register_craft{
 	type = "shapeless",
 	output = "colored_meselamps:dark_red_meselamp",
 	recipe = {"group:dye,color_black", "group:dye,color_red", "group:colored_meselamps"},
 }
-minetest.register_craft{
+core.register_craft{
 	type = "shapeless",
 	output = "colored_meselamps:lime_meselamp",
 	recipe = {"group:dye,color_yellow", "group:dye,color_green", "group:colored_meselamps"},
 }
-minetest.register_craft{
+core.register_craft{
 	type = "shapeless",
 	output = "colored_meselamps:turquoise_meselamp",
 	recipe = {"group:dye,color_green", "group:dye,color_cyan", "group:colored_meselamps"},
